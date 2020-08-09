@@ -1,0 +1,27 @@
+{%extends 'tattos/tattoshome.html'%}
+{%block formulario%}{%endblock%}
+{%block titulo%}{{tatto.nome_tatto}} | {%endblock%}
+
+{%block conteudo%}
+    <h1 class="mt-5">{{tatto.nome_tatto}}</h1>
+
+        <dl>
+
+          <br>
+          {%if tatto.tatto%}
+            <p><img src ="{{tatto.tatto.url}}" style="max-width: 800px; height:400px;"></p>
+          {%endif%}
+          {%if tatto.descricao%}
+            <dt>Descrição</dt>
+            <dd>{{tatto.descricao}}</dd>
+          {%endif%}
+          <dt>Estúdio</dt>
+          <dd>{{tatto.estudio}}</dd>
+          {%if tatto.orcamento%}
+            <dt>Valor</dt>
+                <dd>
+                    R$ {{tatto.orcamento}}
+                </dd>
+          {%endif%}
+        </dl>
+{%endblock%}

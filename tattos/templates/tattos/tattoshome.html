@@ -1,44 +1,57 @@
 {%extends 'base.html'%}
 {%block conteudo%}
-<div class="col-lg-12">
-        <h1 class="mt-5">Minha agenda</h1>
+<h1 class="mt-5">Minhas Tattos</h1>
 
         <table class="table">
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              <th>Telefone</th>
-              <th>Categoria</th>
+              <th>ID</th>
+              <th>Tatto</th>
+              <th>Estúdio</th>
+              <th>Orçamento</th>
+              <th>Tatto-Image</th>
+
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <a href="#"> João</a>
-              </td>
-              <td>Miranda</td>
-              <td>35 9 5555-5555</td>
-              <td>Família</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#"> Leandro</a>
-              </td>
-              <td>Moreira</td>
-              <td>35 9 8888-5555</td>
-              <td>Família</td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#"> Fátima</a>
-              </td>
-              <td>Oliveira</td>
-              <td>35 9 9999-4352</td>
-              <td>Conhecidos</td>
-            </tr>
+          {%for tatto in tattos%}
+            {%if tatto.mostrar%}
+                <tr>
+                  <td>
+                    <a href="{%url 'ver_tatto' tatto.id%}">{{tatto.id}}</a>
+                  </td>
+                  <td>{{tatto.nome_tatto}}</td>
+                  <td>
+                    <a href="#">{{tatto.estudio}}</a>
+                  </td>
+                  <td>R$ {{tatto.orcamento}}</td>
+                  <td><a href="{%url 'ver_tatto' tatto.id%}">Ver Tatto</a></td>
+
+                </tr>
+            {%endif%}
+          {%endfor%}
           </tbody>
         </table>
+            {%block paginacao%}
+                <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    {% for pagina in tattos.paginator.page_range%}
+                    {% if tattos.number == pagina %}
 
-      </div>
+                        <li class="page-item active"><a class="page-link" href="
+                        ?p={{ pagina }}"
+                        >{{ pagina }}</a></li>
+
+                    {% else %}
+
+                        <li class="page-item a"><a class="page-link" href="
+                        ?p={{ pagina }}"
+                        >{{ pagina }}</a></li>
+
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                </nav>
+            {%endblock%}
+
 {%endblock%}
