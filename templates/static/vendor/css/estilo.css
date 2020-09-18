@@ -1,0 +1,200 @@
+body{
+    font-family: 'Open Sans', arial, sans-serif;
+    color: #666;
+    line-height: 1.4;
+}
+a{
+    color: #49bf9d;
+    transition: color .2s linear, border .2s linear;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+a:hover{
+    border-bottom-color: transparent;
+}
+p{
+    margin 0 0 2em;
+}
+img{
+    max-width: 100%;
+}
+h1,h2,h3,h4{
+    color: #787878;
+    font-weight: normal;
+    margin: 1em 0;
+}
+h1{
+    font-size: 36px;
+}
+h2{
+    font-size: 30px;
+}
+h3{
+    font-size: 26px;
+}
+
+h4{
+    font-size: 22px;
+}
+.main-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    padding: 124px 54px 72px 54px;
+    box-sizing: border-box;
+    background: rgba(22,120,1000, 1);
+    background-position: left top;
+    background-size: auto;
+    text-align: right;
+}
+.main-header-title{
+    font-size: 20px;
+    line-height: 1.5;
+    color:white;
+    font-weight: normal;
+    color: rgba(255,255,255,.5);
+}
+.main-header-title strong{
+    color:white;
+    font-weight: normal;
+}
+.main-header-link{
+    color: inherit;
+}
+.main-header-link:hover{
+    color:#49bf9d;
+}
+.main-header-link img{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.main-content{
+    width: 65%;
+    margin-left: 35%;
+    /*background: rgba(22,120,1000, 1);*/
+    padding: 54px 54px 72px 54px;
+    box-sizing: border-box;
+}
+.mytattos{
+    text-align: left;
+    color: white;
+    margin: 0px 10px 0px 0px;
+    transition: color .2s linear;
+}
+.mytattos:hover{
+    color: black;
+}
+
+
+.imagem-link{
+    border: 0;
+}
+
+.ul-icons{
+    list-style-type: none;
+    padding-left: 0;
+}
+.ul-icons li{
+    display: inline-block;
+    font-size: 1.5em;
+    color:#49bf9d;
+}
+.hidden{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+.main-footer{
+    position: fixed;
+    bottom: 0px;
+    width: 35%;
+    left: 0;
+    padding: 0 54px 72px 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+.icon-link{
+    list-style-type: none;
+    padding: 0;
+    color:#ddd;
+    border:0;
+}
+.icon-link:hover{
+    color: #49bf9d;
+}
+.copyright{
+    list-style-type: none;
+}
+.copyright li{
+    color: white;
+}
+.copyright li a{
+    border:0;
+}
+/*Estilizando o form dentro da Main*/
+.formulario{    
+    box-sizing: border-box;
+}
+.login-form{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.form-usuario, .form-senha {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-entrar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-entrar:hover {
+  opacity: 0.9;
+}
+
+.form-sign-btn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: rgb(0, 23, 199);
+}
+.form-sign-btn:hover{
+    opacity: 0.9;
+}
+.btn-a{
+    color:white;
+    border-bottom-color: transparent;
+}
+.form-imgcontainer {
+  text-align: center;
+  margin: 24px 20px 12px 20px;
+}
+
+.form-img-avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.form-container {
+  padding: 16px;
+  background-color:#f1f1f1    
+}
+
+.form-span-password {
+  float: right;
+  padding-top: 16px;
+}

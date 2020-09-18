@@ -1,0 +1,24 @@
+{%extends 'base-home.html'%}
+{%load static%}
+{%block forms%}
+        <form action="#" method="post" class="formulario">
+                  <div class="form-imgcontainer">
+                    <img src="{%static 'vendor/images/avatar.jpg'%}" alt="Avatar" class="form-img-avatar">
+                    <h2 class="login-form">Create Account</h2>
+                  </div>
+
+                  <div class="form-container">
+                    <label for="usuario"><b>Usuário</b></label>
+                    <input  class="form-usuario" type="text" placeholder="Digite um usuário" name="usuario" required>
+
+                    <label for="senha"><b>Senha</b></label>
+                    <input class="form-senha" type="password" placeholder="Digite uma senha" name="psw" required>
+
+                    <label for="senha"><b>Repita a senha</b></label>
+                    <input class="form-senha" type="password" placeholder="Digite a mesma senha" name="psw" required>
+
+                    <button class="form-entrar" type="submit">Cadastrar</button>
+
+                  </div>
+        </form>
+{%endblock%}

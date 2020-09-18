@@ -1,0 +1,71 @@
+{%load static%}
+
+<!doctype html>
+
+<html lang="pt-br">
+
+    <head>
+        <title>My Tattos</title>
+        {%include 'parciais/_home-head.html'%}
+
+    </head>
+
+    <body>
+
+        <header class="main-header">
+           <h1 class="mytattos">My Tattos</h1>
+            <a href="{%url 'index-home'%}" class="main-header-link imagem-link">
+                <img src="{%static 'vendor/images/avatar.jpg'%}" alt="Texto qualquer">
+            </a>
+            <h1 class="main-header-title">Um site criado por <strong>Horácio Carvalho</strong>, Com a intenção de facilitar a sua vida.
+            </h1>
+
+        </header>
+
+        <main class="main-content">
+
+            <section class="main-content-section">
+                {%block forms%}
+                <form action="#" method="post" class="formulario">
+                  <div class="form-imgcontainer">
+                    <img src="{%static 'vendor/images/avatar.jpg'%}" alt="Avatar" class="form-img-avatar">
+                    <h2 class="login-form">Welcome, Friends.</h2>
+                  </div>
+
+                  <div class="form-container">
+                    <label for="usuario"><b>Usuário</b></label>
+                    <input  class="form-usuario" type="text" placeholder="Digite seu usuário" name="usuario" required>
+
+                    <label for="senha"><b>Senha</b></label>
+                    <input class="form-senha" type="password" placeholder="Digite sua senha" name="psw" required>
+
+                    <button class="form-entrar" type="submit">Entrar</button>
+                    <label>
+                      <input type="checkbox" checked="checked" name="remember"> Lembrar-me
+                    </label>
+                  </div>
+
+                  <div class="form-container">
+                    <button type="button" class="form-sign-btn"><a href="{%url 'cadastro'%}" class="btn-a" >Sign-up</a></button>
+                    <span class="form-span-password">Esqueceu sua <a href="#">senha?</a></span>
+                  </div>
+                </form>
+                {%endblock%}
+
+
+            </section>
+        </main>
+        <footer class="main-footer">
+
+            <ul class="ul-icons">
+                 <li><a href="https://www.facebook.com/horaciocarvalhoo" class="icon-link" target="_blank"><span class="hidden">Facebook</span><i class="fab fa-facebook-square"></i></a></li>
+                 <li><a href="https://github.com/Mucilon" class="icon-link" target="_blank"><span class="hidden">Github</span><i class="fab fa-github"></i></a></li>
+                 <li><a href="mailto:mucilonws@gmail.com?subject=Contato" class="icon-link" target="_blank"><span class="hidden">E-Mail</span><i class="fas fa-envelope"></i></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>Horácio Carvalho</li>
+                <li>Design: <a href="https://www.facebook.com/horaciocarvalhoo">HTML AND CSS</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

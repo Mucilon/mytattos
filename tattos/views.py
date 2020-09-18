@@ -13,7 +13,7 @@ def tattoshome(request):
     paginator = Paginator(tattos,5)
     page = request.GET.get('p')
     tattos = paginator.get_page(page)
-    return render(request,'tattos/tattoshome.html',{
+    return render(request, 'tattos/index.html', {
         'tattos': tattos
     })
 
