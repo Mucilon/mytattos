@@ -1,0 +1,8 @@
+{%extends 'base.html'%}
+{%block conteudo%}
+<h1 class="mt-3 mb-3">Olá {{ user }}</h1>
+<div class="form-container">
+    <button type="button" class="form-sign-btn"><a href="{%url 'logout'%}" class="btn-a">Logout</a></button>
+
+</div>
+{%endblock%}

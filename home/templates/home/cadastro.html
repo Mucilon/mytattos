@@ -1,7 +1,9 @@
 {%extends 'base-home.html'%}
 {%load static%}
 {%block forms%}
-        <form action="#" method="post" class="formulario">
+        <form action="{% url 'cadastro' %}" method="POST" class="formulario">
+            {% include 'parciais/_messages.html' %}
+            {% csrf_token %}
                   <div class="form-imgcontainer">
                     <img src="{%static 'vendor/images/avatar.jpg'%}" alt="Avatar" class="form-img-avatar">
                     <h2 class="login-form">Create Account</h2>
@@ -9,13 +11,13 @@
 
                   <div class="form-container">
                     <label for="usuario"><b>Usuário</b></label>
-                    <input  class="form-usuario" type="text" placeholder="Digite um usuário" name="usuario" required>
+                    <input  class="form-usuario" value="{{request.POST.usuario}}" type="text" placeholder="Digite um usuário" name="usuario" required>
 
                     <label for="senha"><b>Senha</b></label>
-                    <input class="form-senha" type="password" placeholder="Digite uma senha" name="psw" required>
+                    <input class="form-senha" value="" type="password" placeholder="Digite uma senha" name="senha" required>
 
-                    <label for="senha"><b>Repita a senha</b></label>
-                    <input class="form-senha" type="password" placeholder="Digite a mesma senha" name="psw" required>
+                    <label for="senha2"><b>Repita a senha</b></label>
+                    <input class="form-senha" type="password" placeholder="Digite a mesma senha" name="senha2" required>
 
                     <button class="form-entrar" type="submit">Cadastrar</button>
 

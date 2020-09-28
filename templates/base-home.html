@@ -26,7 +26,9 @@
 
             <section class="main-content-section">
                 {%block forms%}
-                <form action="#" method="post" class="formulario">
+
+                <form action="{%url 'login'%}" method="POST" class="formulario">{% csrf_token %}
+                  {%block login%}
                   <div class="form-imgcontainer">
                     <img src="{%static 'vendor/images/avatar.jpg'%}" alt="Avatar" class="form-img-avatar">
                     <h2 class="login-form">Welcome, Friends.</h2>
@@ -45,10 +47,12 @@
                     </label>
                   </div>
 
+
                   <div class="form-container">
                     <button type="button" class="form-sign-btn"><a href="{%url 'cadastro'%}" class="btn-a" >Sign-up</a></button>
                     <span class="form-span-password">Esqueceu sua <a href="#">senha?</a></span>
                   </div>
+                  {%endblock%}
                 </form>
                 {%endblock%}
 
