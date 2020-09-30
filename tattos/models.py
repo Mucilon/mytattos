@@ -16,7 +16,7 @@ class Tattos(models.Model):
     data_criacao = models.DateTimeField(default=timezone.now,verbose_name='Data')
     descricao = models.TextField(blank=True,verbose_name='Descrição')
     mostrar = models.BooleanField(default=True,verbose_name='Mostrar')
-    estudio = models.ForeignKey(Estudio,on_delete=models.DO_NOTHING,verbose_name='Estúdio')
+    estudio = models.ForeignKey(Estudio,on_delete=models.DO_NOTHING,verbose_name='Estúdio', blank=True)
 
     def __str__(self):
         return self.nome_tatto

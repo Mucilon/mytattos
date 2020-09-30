@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from .models import FormTatto, FormEstudio
 
 # Create your views here.
 def login(request):
@@ -18,7 +19,7 @@ def login(request):
     else:
         auth.login(request, user)
 
-        return redirect('dashboard')
+        return redirect('index')
 
 def logout(request):
     auth.logout(request)
@@ -61,6 +62,22 @@ def cadastro(request):
 
 @login_required(redirect_field_name='login')
 def dashboard(request):
-    return render(request, 'home/dashboard.html')
+    if request.method != 'POST':
+        form = FormTatto()
+        estudio = FormEstudio()
+
+        return render(request, 'home/dashboard.html', {'form':form, 'estudio':estudio})
+
+    form = FormTatto(request.POST, request.FILES)
+    estudio = FormEstudio(request.POST)
 
 
+    if not form.is_valid():
+        messages.ERROR(request,'Erro ao enviar form!')
+        form = FormTatto(request.POST)
+        estudio = FormEstudio(request.POST)
+
+        return render(request, 'home/dashboard.html', {'form': form, 'estudio':estudio})
+
+    form.save()
+    return redirect('dashboard')
